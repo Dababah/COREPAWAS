@@ -1,89 +1,128 @@
 .container {
-  padding: 120px 8% 100px;
-  max-width: 1200px;
+  padding: 160px 8% 100px;
+  max-width: 1000px;
   margin: 0 auto;
-  position: relative;
 }
 
-.bgJournal {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 100% 40px;
-  mask-image: linear-gradient(to bottom, black, transparent);
-  pointer-events: none;
-  z-index: -1;
-}
-
-.header {
+/* Hero Section */
+.hero {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 100px;
 }
 
-.title {
-  font-size: 4rem;
-  margin-bottom: 20px;
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 24px;
 }
 
 .subtitle {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.6);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
 }
 
-.postGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-bottom: 80px;
+/* Category Filter */
+.filter {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 24px;
+  border-radius: 100px;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.filterBtn:hover, .filterBtnActive {
+  background: var(--accent-red);
+  color: #fff;
+  border-color: var(--accent-red);
+}
+
+/* Post List */
+.postList {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .postCard {
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
+  padding: 50px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s;
 }
 
-.category {
-  font-size: 0.75rem;
-  font-weight: 700;
+.postCard:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 59, 59, 0.2);
+}
+
+.postMeta {
+  display: flex;
+  gap: 20px;
+  font-size: 0.8rem;
+  opacity: 0.5;
+  margin-bottom: 16px;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 15px;
 }
 
-.category[data-cat="Tech"] { color: var(--it-accent); }
-.category[data-cat="Market"] { color: var(--finance-accent); }
-
-.date {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.4);
-  margin-bottom: 10px;
+.postCard h2 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
 }
 
-.postCard h3 {
-  font-size: 1.4rem;
-  margin-bottom: 25px;
-  flex-grow: 1;
+.postExcerpt {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  opacity: 0.7;
+  margin-bottom: 24px;
 }
 
-.readMore {
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.9rem;
+.keyInsight {
+  padding: 16px 20px;
+  background: rgba(255, 59, 59, 0.05);
+  border-left: 4px solid var(--accent-red);
+  font-size: 0.95rem;
+  font-style: italic;
+  border-radius: 8px;
 }
 
-.comingSoon {
+/* Footer Section */
+.footerSection {
   text-align: center;
-  padding: 40px;
-  border: 1px dashed rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  color: rgba(255, 255, 255, 0.4);
+  margin-top: 120px;
+  padding: 100px 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.footerSection p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+  opacity: 0.8;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .title { font-size: 3rem; }
+  .container { padding-top: 100px; }
+  .postCard { padding: 30px; }
+  .postCard h2 { font-size: 1.5rem; }
+  .filter { gap: 10px; }
+  .filterBtn { padding: 8px 16px; font-size: 0.8rem; }
 }
