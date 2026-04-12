@@ -1,83 +1,119 @@
 .container {
-  padding: 120px 8% 100px;
+  padding: 160px 8% 100px;
   max-width: 1400px;
   margin: 0 auto;
   position: relative;
+  z-index: 1;
 }
 
+/* Background elements */
 .bgNodes {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background-image: radial-gradient(rgba(255, 59, 59, 0.05) 1px, transparent 1px);
-  background-size: 24px 24px;
-  mask-image: linear-gradient(to bottom, black, transparent);
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: radial-gradient(rgba(255, 59, 59, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
   z-index: -1;
 }
 
-.header {
+/* Hero Section */
+.hero {
   text-align: center;
-  margin-bottom: 100px;
+  margin-bottom: 120px;
 }
 
 .badge {
   display: inline-block;
   background: rgba(255, 59, 59, 0.1);
   color: var(--accent-red);
-  padding: 6px 16px;
+  padding: 8px 20px;
   border-radius: 100px;
-  font-size: 0.75rem;
-  font-weight: 800;
+  font-size: 0.85rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-bottom: 24px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 59, 59, 0.2);
 }
 
 .title {
-  font-size: clamp(3rem, 8vw, 5rem);
+  font-size: clamp(2.5rem, 8vw, 5rem);
   line-height: 1.1;
-  margin-bottom: 24px;
+  margin-bottom: 30px;
 }
 
 .subtitle {
   font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.6);
-  max-width: 600px;
-  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 800px;
+  margin: 0 auto 50px;
+  line-height: 1.8;
 }
 
-.section {
+.ctaBtn {
+  display: inline-block;
+  background: var(--accent-green);
+  color: #000;
+  padding: 20px 50px;
+  border-radius: 16px;
+  font-weight: 800;
+  font-size: 1.1rem;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+}
+
+.ctaBtn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(37, 211, 102, 0.4);
+}
+
+/* Importance Section */
+.importanceSection {
   margin-bottom: 120px;
 }
 
-.sectionTitle {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
+.sectionHeader {
   text-align: center;
+  margin-bottom: 60px;
 }
 
-.bentoGrid {
+.sectionHeader h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.importanceGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.importanceCard {
+  padding: 40px;
+  border-top: 4px solid var(--accent-red);
+}
+
+.importanceCard h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--accent-red);
+}
+
+/* Services Section */
+.servicesSection {
+  margin-bottom: 120px;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
 .serviceCard {
-  padding: 50px;
-}
-
-.serviceIcon {
-  margin-bottom: 30px;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  background: var(--accent-red);
-  border-radius: 50%;
-  box-shadow: 0 0 15px var(--accent-red);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
 }
 
 .serviceCard h3 {
@@ -85,66 +121,130 @@
   margin-bottom: 15px;
 }
 
-.portfolioGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 30px;
+.serviceUse {
+  margin-top: auto;
+  padding-top: 20px;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.portfolioCard {
-  padding: 60px;
-  min-height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.portfolioTag {
-  font-size: 0.75rem;
-  font-weight: 700;
+.serviceUse strong {
+  display: block;
   color: var(--accent-red);
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  margin-bottom: 4px;
 }
 
-.portfolioVisual {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, #000 0%, transparent 100%);
-  z-index: -1;
+/* Technical Edge */
+.techSection {
+  padding: 100px 0;
+  margin-bottom: 120px;
 }
 
-.ctaBox {
-  padding: 100px;
-  text-align: center;
-  background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%) !important;
+.techGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
 }
 
-.waBtn {
-  margin-top: 40px;
-  display: inline-block;
-  background: #fff;
-  color: #000;
-  padding: 20px 60px;
-  border-radius: 100px;
-  font-weight: 800;
+.techList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.techItem h4 {
   font-size: 1.1rem;
-  transition: all 0.3s;
+  margin-bottom: 10px;
+  color: var(--accent-red);
 }
 
-.waBtn:hover {
-  background: var(--accent-red);
-  color: #fff;
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(255, 59, 59, 0.3);
+.techVisual {
+  position: relative;
+  aspect-ratio: 16/9;
+  border-radius: 32px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #000;
+}
+
+/* Process Section */
+.processSection {
+  margin-bottom: 120px;
+}
+
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.processCard {
+  padding: 30px;
+  position: relative;
+}
+
+.processNumber {
+  font-size: 3rem;
+  font-weight: 900;
+  opacity: 0.1;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.processCard h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+/* Offer Section */
+.offerSection {
+  margin-bottom: 120px;
+}
+
+.offerGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.offerCard {
+  padding: 40px;
+  text-align: center;
+  border: 1px dashed var(--accent-red);
+}
+
+.offerCard h3 {
+  margin-bottom: 15px;
+}
+
+/* Final CTA */
+.finalCta {
+  text-align: center;
+  padding: 100px 40px;
+}
+
+.finalCta h2 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+.smallNote {
+  margin-top: 24px;
+  opacity: 0.5;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1024px) {
+  .importanceGrid, .servicesGrid, .processGrid, .offerGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .techGrid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
-  .title { font-size: 3rem; }
-  .portfolioGrid { grid-template-columns: 1fr; }
-  .ctaBox { padding: 60px 20px; }
+  .importanceGrid, .servicesGrid, .processGrid, .offerGrid {
+    grid-template-columns: 1fr;
+  }
 }
