@@ -1,87 +1,165 @@
 .container {
-  padding: 120px 8% 100px;
+  padding: 160px 8% 100px;
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
+  z-index: 1;
 }
 
-.bgOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 10% 20%, rgba(255, 59, 59, 0.03) 0%, transparent 50%),
-              radial-gradient(circle at 90% 80%, rgba(255, 138, 0, 0.03) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: -1;
+/* Hero Section */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+  margin-bottom: 150px;
 }
 
-.intro {
-  display: flex;
-  gap: 50px;
-  margin-bottom: 100px;
+.imageWrapper {
+  position: relative;
+  aspect-ratio: 4/5;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
+
+.heroContent h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+.story {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 40px;
+}
+
+/* Principles Section */
+.principleSection {
+  margin-bottom: 150px;
+  padding: 100px 8%;
+  background: rgba(255, 59, 59, 0.02);
+  border-radius: 60px;
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(255, 59, 59, 0.1);
+  color: var(--accent-red);
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+.principleSection h2 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+
+.principleText {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  opacity: 0.8;
+}
+
+/* Story Grid */
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 120px;
+  margin-bottom: 150px;
   align-items: center;
 }
 
-.title {
-  font-size: 4rem;
-  line-height: 1.1;
-  margin-bottom: 40px;
+.storyCard h3 {
+  font-size: 2rem;
+  margin-bottom: 24px;
 }
 
-.bio {
-  font-size: 1.25rem;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 25px;
+/* Services Detail */
+.servicesDetail {
+  margin-bottom: 150px;
 }
 
-.sectionTitle {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-.valueGrid {
+.detailGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-bottom: 100px;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 60px;
 }
 
-.valueCard {
-  padding: 40px;
-  text-align: center;
+.detailBox {
+  padding: 50px;
 }
 
-.valueCard h3 {
-  margin-bottom: 15px;
-  color: var(--it-accent);
-}
-
-.faqList {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.faqItem {
+.detailBox h3 {
+  font-size: 1.8rem;
   margin-bottom: 30px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--accent-red);
 }
 
-.faqItem h4 {
-  font-size: 1.2rem;
-  color: var(--finance-accent);
-  margin-bottom: 10px;
+.pointList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.faqItem p {
-  color: rgba(255, 255, 255, 0.6);
-  line-height: 1.6;
+.pointItem h4 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+/* Lifestyle Section */
+.lifestyleSection {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 80px;
+  margin-bottom: 150px;
+  align-items: center;
+}
+
+/* Promise Section */
+.promiseSection {
+  text-align: center;
+  margin-bottom: 150px;
+}
+
+.promiseGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 60px;
+}
+
+.promiseCard {
+  padding: 40px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero, .storyGrid, .lifestyleSection, .detailGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .hero { text-align: center; }
+  .imageWrapper { max-width: 500px; margin: 0 auto; order: -1; }
+  .detailBox { padding: 30px; }
 }
 
 @media (max-width: 768px) {
-  .title { font-size: 3rem; }
+  .container { padding-top: 120px; }
+  .promiseGrid { grid-template-columns: 1fr; }
+  .detailBox { padding: 24px; }
+  .hero h1 { font-size: 2.2rem; }
+  .principleSection h2 { font-size: 2rem; }
+  .principleSection { padding: 60px 20px; }
 }
