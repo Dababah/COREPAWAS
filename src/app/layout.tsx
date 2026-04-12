@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 };
 
 import Navbar from "@/components/Navbar";
+import FloatingButtons from "@/components/FloatingButtons";
 
 export default function RootLayout({
   children,
@@ -31,6 +32,7 @@ export default function RootLayout({
         <div style={{ paddingTop: '70px' }}>
           {children}
         </div>
+        <FloatingButtons />
       </body>
     </html>
   );

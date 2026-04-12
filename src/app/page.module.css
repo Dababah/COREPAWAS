@@ -234,36 +234,6 @@
   margin-bottom: 15px;
 }
 
-/* Floating Buttons */
-.floatingContainer {
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  z-index: 100;
-}
-
-.floatBtn {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-  transition: all 0.3s;
-}
-
-.floatBtn:hover {
-  transform: scale(1.1);
-}
-
-.floatWa { background: #25d366; }
-.floatTg { background: #0088cc; }
-
 /* Responsive */
 @media (max-width: 1024px) {
   .problemGrid, .bonusGrid { grid-template-columns: 1fr 1fr; }
@@ -274,5 +244,4 @@
   .problemGrid, .bonusGrid { grid-template-columns: 1fr; }
   .title { font-size: 2.5rem; }
   .hero { padding-top: 140px; }
-  .floatingContainer { bottom: 20px; right: 20px; }
 }
