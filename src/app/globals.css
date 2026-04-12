@@ -99,6 +99,26 @@ a {
   animation: pulse-glow 4s infinite alternate;
 }
 
+/* Responsive Optimizations */
+@media (max-width: 768px) {
+  :root {
+    --font-heading-size: 2.2rem;
+  }
+  
+  h1 { font-size: 2.5rem !important; }
+  h2 { font-size: 2rem !important; }
+  h3 { font-size: 1.5rem !important; }
+  p { font-size: 1rem !important; }
+  
+  .glass {
+    border-radius: 16px;
+  }
+  
+  .bento {
+    border-radius: 20px;
+  }
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 5px;

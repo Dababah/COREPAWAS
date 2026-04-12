@@ -17,8 +17,9 @@
   padding: 8px 12px 8px 24px;
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 30px;
   border-radius: 100px;
+  max-width: 95vw;
 }
 
 .logo a {
@@ -70,6 +71,22 @@
 }
 
 @media (max-width: 768px) {
-  .links { display: none; }
-  .navbarPill { padding: 8px 12px 8px 20px; }
+  .navbarContainer { top: 10px; padding: 0 10px; }
+  .navbarPill { 
+    padding: 6px 6px 6px 16px; 
+    gap: 15px;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .links { 
+    display: flex; 
+    gap: 12px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .links::-webkit-scrollbar { display: none; }
+  .link { font-size: 0.8rem; white-space: nowrap; }
+  .btnNav { padding: 8px 14px; font-size: 0.75rem; }
+  .logo a { font-size: 1rem; }
 }
