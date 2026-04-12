@@ -1,0 +1,154 @@
+.container {
+  padding: 120px 8% 100px;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.bgCharts {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 60%;
+  background-image: 
+    linear-gradient(90deg, rgba(255, 138, 0, 0.02) 1px, transparent 1px),
+    linear-gradient(rgba(255, 138, 0, 0.02) 1px, transparent 1px);
+  background-size: 80px 40px;
+  mask-image: radial-gradient(circle at top right, black, transparent);
+  z-index: -1;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(255, 138, 0, 0.1);
+  color: var(--accent-orange);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: clamp(3rem, 8vw, 5rem);
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section {
+  margin-bottom: 120px;
+}
+
+.pBox {
+  padding: 80px;
+  text-align: center;
+}
+
+.pLabel {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 20px;
+}
+
+.pBox h2 {
+  font-size: 3.5rem;
+  margin-bottom: 30px;
+}
+
+.pBox p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.pathGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.pathCard {
+  padding: 40px;
+  text-align: center;
+}
+
+.pathNum {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--accent-red);
+  opacity: 0.2;
+  margin-bottom: 20px;
+}
+
+.ctaGrid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 30px;
+}
+
+.ibDetail, .telegramLink {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ibDetail h3, .telegramLink h3 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.btnXM, .btnTele {
+  margin-top: 30px;
+  padding: 18px 40px;
+  border-radius: 100px;
+  font-weight: 800;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.btnXM {
+  background: #fff;
+  color: #000;
+}
+
+.btnTele {
+  background: #0088cc;
+  color: #fff;
+}
+
+.btnXM:hover, .btnTele:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 968px) {
+  .ctaGrid { grid-template-columns: 1fr; }
+  .pBox { padding: 40px 20px; }
+  .pBox h2 { font-size: 2.5rem; }
+}

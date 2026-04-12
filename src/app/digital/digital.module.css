@@ -1,0 +1,150 @@
+.container {
+  padding: 120px 8% 100px;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.bgNodes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-image: radial-gradient(rgba(255, 59, 59, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: linear-gradient(to bottom, black, transparent);
+  z-index: -1;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(255, 59, 59, 0.1);
+  color: var(--accent-red);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: clamp(3rem, 8vw, 5rem);
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section {
+  margin-bottom: 120px;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.bentoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.serviceCard {
+  padding: 50px;
+}
+
+.serviceIcon {
+  margin-bottom: 30px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: var(--accent-red);
+  border-radius: 50%;
+  box-shadow: 0 0 15px var(--accent-red);
+}
+
+.serviceCard h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.portfolioGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+}
+
+.portfolioCard {
+  padding: 60px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.portfolioTag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-red);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.portfolioVisual {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #000 0%, transparent 100%);
+  z-index: -1;
+}
+
+.ctaBox {
+  padding: 100px;
+  text-align: center;
+  background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%) !important;
+}
+
+.waBtn {
+  margin-top: 40px;
+  display: inline-block;
+  background: #fff;
+  color: #000;
+  padding: 20px 60px;
+  border-radius: 100px;
+  font-weight: 800;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+}
+
+.waBtn:hover {
+  background: var(--accent-red);
+  color: #fff;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(255, 59, 59, 0.3);
+}
+
+@media (max-width: 768px) {
+  .title { font-size: 3rem; }
+  .portfolioGrid { grid-template-columns: 1fr; }
+  .ctaBox { padding: 60px 20px; }
+}

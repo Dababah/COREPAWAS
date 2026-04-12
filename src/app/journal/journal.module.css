@@ -1,0 +1,89 @@
+.container {
+  padding: 120px 8% 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.bgJournal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 40px;
+  mask-image: linear-gradient(to bottom, black, transparent);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.title {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.postGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.postCard {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.category {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.category[data-cat="Tech"] { color: var(--it-accent); }
+.category[data-cat="Market"] { color: var(--finance-accent); }
+
+.date {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 10px;
+}
+
+.postCard h3 {
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+.readMore {
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.comingSoon {
+  text-align: center;
+  padding: 40px;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+  .title { font-size: 3rem; }
+}
