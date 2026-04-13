@@ -1,12 +1,12 @@
 .navbarContainer {
   position: fixed;
-  top: 20px;
+  top: 16px; /* Added more space from top */
   left: 0;
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 0 20px;
-  z-index: 1000;
+  padding: 0 16px;
+  z-index: 2000;
 }
 
 .navbarPill {
@@ -77,22 +77,21 @@
 }
 
 @media (max-width: 768px) {
-  .navbarContainer { top: 10px; padding: 0 10px; }
+  .navbarContainer { top: 12px; padding: 0 12px; }
   .navbarPill { 
-    padding: 6px 6px 6px 16px; 
-    gap: 15px;
-    justify-content: space-between;
-    width: 100%;
+    padding: 6px 10px; 
+    gap: 12px;
+    height: 52px;
+    width: auto;
+    max-width: 100%;
   }
   .links { 
     display: flex; 
     gap: 12px;
     overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    padding-right: 10px;
   }
-  .links::-webkit-scrollbar { display: none; }
-  .link { font-size: 0.8rem; white-space: nowrap; }
-  .btnNav { padding: 8px 14px; font-size: 0.75rem; }
-  .logo a { font-size: 1rem; }
+  .link { font-size: 0.8rem; }
+  .btnNav { padding: 6px 12px; font-size: 0.75rem; }
+  .action { gap: 8px; }
 }
