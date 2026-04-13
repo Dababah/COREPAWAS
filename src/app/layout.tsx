@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import FloatingButtons from "@/components/FloatingButtons";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import GridAnimator from "@/components/GridAnimator";
 
 export const metadata: Metadata = {
   title: "Core Pawas | At the heart of your digital and financial growth",
@@ -18,6 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased">
         <ThemeProvider>
+          <GridAnimator />
           <Navbar />
           <div style={{ position: 'relative' }}>
             {children}
