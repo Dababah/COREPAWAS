@@ -39,7 +39,7 @@
   font-size: clamp(2.5rem, 8vw, 4.5rem);
   line-height: 1.1;
   margin-bottom: 30px;
-  color: #fff;
+  color: var(--foreground);
 }
 
 .subtitle {
@@ -97,8 +97,8 @@
 
 .problemCard {
   padding: 40px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
   border-radius: 24px;
 }
 
@@ -147,7 +147,8 @@
 /* Trust Section */
 .trustSection {
   padding: 120px 8%;
-  background: rgba(255, 193, 7, 0.02);
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
   border-radius: 48px;
   margin-bottom: 120px;
 }
@@ -162,7 +163,7 @@
 .trustImage {
   border-radius: 32px;
   overflow: hidden;
-  border: 1px solid rgba(255, 193, 7, 0.2);
+  border: 1px solid var(--surface-border);
 }
 
 .trustPoints {
@@ -192,7 +193,7 @@
   padding: 30px;
   position: relative;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--surface-border);
 }
 
 .flowNumber {

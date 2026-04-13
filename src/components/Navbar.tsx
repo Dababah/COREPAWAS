@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from './Navbar.module.css';
+import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -35,6 +36,7 @@ export default function Navbar() {
           ))}
         </div>
         <div className={styles.action}>
+          <ThemeToggle />
           <a href="https://wa.me/yournumber" className={styles.btnNav}>
             Contact
           </a>

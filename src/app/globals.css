@@ -1,18 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
+  /* Default Theme: Light */
+  --background: #ffffff;
+  --foreground: #000000;
+  --surface: #f8f9fa;
+  --surface-border: rgba(0, 0, 0, 0.06);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --text-muted: rgba(0, 0, 0, 0.6);
+  --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  
   --accent-red: #ff3b3b;
   --accent-orange: #ff8a00;
   --accent-green: #25d366;
   --accent-gold: #ffc107;
-  --surface: #0d0d0d;
-  --surface-border: rgba(255, 255, 255, 0.08);
-  --glass-bg: rgba(255, 255, 255, 0.03);
   
   --font-heading: 'Plus Jakarta Sans', sans-serif;
   --font-body: 'Outfit', sans-serif;
+}
+
+/* Dark Mode Overrides */
+[data-theme='dark'] {
+  --background: #000510;
+  --foreground: #ffffff;
+  --surface: #0d0d0d;
+  --surface-border: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --text-muted: rgba(255, 255, 255, 0.6);
+  --card-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
 }
 
 * {
@@ -30,6 +45,7 @@ body {
   font-family: var(--font-body);
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -39,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-muted);
   line-height: 1.6;
 }
 
@@ -62,19 +78,20 @@ a {
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--surface-border);
   border-radius: 24px;
+  box-shadow: var(--card-shadow);
 }
 
 .bento {
   background: var(--surface);
   border: 1px solid var(--surface-border);
   border-radius: 32px;
+  box-shadow: var(--card-shadow);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .bento:hover {
   border-color: rgba(255, 59, 59, 0.3);
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 /* Animations */
@@ -88,8 +105,8 @@ a {
 }
 
 @keyframes pulse-glow {
-  0% { opacity: 0.4; filter: blur(80px); }
-  100% { opacity: 0.7; filter: blur(100px); }
+  0% { opacity: 0.2; filter: blur(80px); }
+  100% { opacity: 0.4; filter: blur(100px); }
 }
 
 .glow {
@@ -102,35 +119,18 @@ a {
 /* Responsive Optimizations - Professional & Neat */
 @media (max-width: 768px) {
   :root {
-    --font-heading-size: 1.8rem;
+    --font-heading-size: 1.5rem;
   }
   
-  h1, h2 { 
-    text-align: center; 
-    letter-spacing: -0.5px;
-  }
-  
-  p { 
-    text-align: center; 
-    color: rgba(255, 255, 255, 0.6) !important;
-  }
+  h1, h2 { text-align: center; }
+  p { text-align: center; }
   
   .glass, .bento {
-    border-radius: 16px;
     padding: 20px !important;
-    border: 1px solid rgba(255, 255, 255, 0.08); /* Sharper borders */
-    background: rgba(10, 10, 15, 0.4) !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   }
 
-  /* List items should stay left aligned even if parent is center */
-  ul, .techList, .featureList, .pointList {
-    text-align: left;
-  }
-  
-  ul li, .techList div, .featureList div, .pointList div {
-    text-align: left;
-  }
+  ul, .techList, .featureList, .pointList { text-align: left; }
+  ul li, .techList div, .featureList div, .pointList div { text-align: left; }
 }
 
 /* Custom Scrollbar */
@@ -138,10 +138,10 @@ a {
   width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #000;
+  background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-  background: #222;
+  background: var(--surface-border);
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {

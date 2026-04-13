@@ -20,7 +20,7 @@
   aspect-ratio: 4/5;
   border-radius: 40px;
   overflow: hidden;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+  box-shadow: var(--card-shadow);
 }
 
 .heroContent h1 {
@@ -32,7 +32,7 @@
 .story {
   font-size: 1.15rem;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-muted);
   margin-bottom: 40px;
 }
 
@@ -40,7 +40,8 @@
 .principleSection {
   margin-bottom: 150px;
   padding: 100px 8%;
-  background: rgba(255, 59, 59, 0.02);
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
   border-radius: 60px;
   text-align: center;
 }
