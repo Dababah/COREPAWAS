@@ -65,8 +65,8 @@
 }
 
 .btnNav:hover {
-  background: var(--accent-red);
-  color: #fff;
+  background: var(--accent-gold);
+  color: #000;
   transform: scale(1.05);
 }
 
