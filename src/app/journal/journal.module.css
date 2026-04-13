@@ -119,11 +119,78 @@
   opacity: 0.8;
 }
 
-/* Responsive */
+/* ====== MOBILE EXPERT LAYOUT ====== */
 @media (max-width: 768px) {
-  .container { padding-top: 100px; }
-  .postCard { padding: 30px; }
-  .postCard h2 { font-size: 1.5rem; }
-  .filter { gap: 10px; }
-  .filterBtn { padding: 8px 16px; font-size: 0.8rem; }
+  .container {
+    padding: 96px 20px 48px;
+    max-width: 100%;
+  }
+
+  /* Hero */
+  .hero { margin-bottom: 48px; }
+  .hero h1 {
+    font-size: 1.8rem;
+    line-height: 1.12;
+    letter-spacing: -0.04em;
+  }
+  .subtitle {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  /* Category filter */
+  .filter {
+    gap: 8px;
+    margin-bottom: 40px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .filter::-webkit-scrollbar { display: none; }
+  .filterBtn {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Post list */
+  .postList { gap: 16px; }
+  .postCard {
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+  .postMeta {
+    font-size: 0.72rem;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .postCard h2 {
+    font-size: 1.3rem;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    text-align: left;
+  }
+  .postExcerpt {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    margin-bottom: 16px;
+    text-align: left;
+  }
+  .keyInsight {
+    padding: 14px 16px;
+    font-size: 0.88rem;
+  }
+
+  /* Footer */
+  .footerSection {
+    margin-top: 64px;
+    padding: 48px 20px;
+  }
+  .footerSection p {
+    font-size: 1rem;
+    text-align: center;
+  }
 }

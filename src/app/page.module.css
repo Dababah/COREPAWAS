@@ -234,20 +234,128 @@
   margin-bottom: 15px;
 }
 
-/* Responsive */
+/* ====== MOBILE EXPERT LAYOUT ====== */
 @media (max-width: 768px) {
-  .sectionContainer { padding: 40px 16px; }
-  .problemGrid, .bonusGrid { grid-template-columns: 1fr; gap: 16px; }
-  .problemCard h3, .bonusCard h3 { text-align: center; }
-  .problemCard p, .bonusCard p { text-align: left; }
-  .title { font-size: 1.8rem; margin-bottom: 16px; text-align: center; }
-  .story { font-size: 0.95rem; margin-bottom: 32px; text-align: center; line-height: 1.6; }
-  .hero { padding: 120px 16px 60px; }
-  .btnGreen, .btnGold { width: 100%; justify-content: center; padding: 16px; }
-  .sectionHeader { margin-bottom: 40px; }
-  .solutionContent { gap: 32px; }
-  .solutionText h2 { margin-bottom: 16px; }
-  .featureItem { text-align: left; }
-  .featureItem h4 { text-align: left; }
-  .expertGrid { gap: 32px; }
+  /* Hero */
+  .hero {
+    padding: 110px 20px 56px;
+    text-align: center;
+    gap: 0;
+  }
+  .badge {
+    font-size: 0.72rem;
+    padding: 7px 16px;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+  }
+  .title {
+    font-size: 2.1rem;
+    line-height: 1.12;
+    margin-bottom: 16px;
+    letter-spacing: -0.05em;
+  }
+  .story {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 28px;
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    max-width: 100%;
+  }
+  .ctaGroup {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+  .btnGreen, .btnGold {
+    width: 100%;
+    justify-content: center;
+    padding: 15px 20px;
+    font-size: 0.95rem;
+    border-radius: 10px;
+  }
+
+  /* Sections */
+  .sectionContainer {
+    padding: 48px 20px;
+  }
+  .sectionHeader {
+    margin-bottom: 32px;
+  }
+  .sectionHeader h2 {
+    font-size: 1.75rem;
+    line-height: 1.15;
+  }
+
+  /* Problem & Bonus grid */
+  .problemSection {
+    padding: 48px 20px;
+  }
+  .problemGrid, .bonusGrid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .problemCard, .bonusCard {
+    padding: 24px 20px;
+    border-radius: 14px;
+  }
+  .problemCard h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  .problemCard p, .bonusCard p {
+    font-size: 0.9rem;
+    text-align: left;
+    line-height: 1.65;
+  }
+
+  /* Solution section */
+  .solutionSection { padding: 48px 20px; }
+  .solutionContent {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .solutionText h2 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    text-align: left;
+  }
+  .featureList {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .featureItem {
+    padding: 16px;
+    text-align: left;
+  }
+  .featureItem h4 {
+    font-size: 1rem;
+    text-align: left;
+  }
+  .solutionVisual {
+    border-radius: 16px;
+    aspect-ratio: 16/9;
+  }
+
+  /* Expert section */
+  .expertSection { padding: 48px 20px; }
+  .expertGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .expertInfo h2 {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+  }
+  .expertPoints { gap: 20px; }
+  .expertPoint h4 { font-size: 1.05rem; }
+
+  /* Value section */
+  .valueSection { padding: 48px 20px; }
+  .bonusCard h3 {
+    text-align: left;
+    font-size: 1.1rem;
+  }
 }

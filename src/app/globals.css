@@ -164,15 +164,31 @@ a { color: inherit; text-decoration: none; }
 
 /* ======== MOBILE ======== */
 @media (max-width: 768px) {
-  h1 { font-size: 2rem !important; line-height: 1.15; }
-  h2 { font-size: 1.6rem !important; }
-  h3 { font-size: 1.2rem !important; }
-  p  { font-size: 0.95rem !important; }
+  /* Base typography — let page CSS take finer control */
+  h1 { font-size: clamp(1.75rem, 6.5vw, 2.2rem); line-height: 1.1; }
+  h2 { font-size: clamp(1.4rem, 5vw, 1.8rem); line-height: 1.15; }
+  h3 { font-size: clamp(1rem, 4vw, 1.25rem); }
+  p  { font-size: 0.925rem; line-height: 1.7; }
 
-  .glass, .bento {
-    padding: 20px !important;
-    border-radius: 12px;
+  /* Text alignment: headings center, body left */
+  h1, h2 { text-align: center; }
+  p { text-align: left; }
+
+  /* Cards breathe comfortably */
+  .glass { padding: 22px 18px !important; border-radius: 16px; }
+  .bento { padding: 22px 18px !important; border-radius: 16px; }
+
+  /* Disable animations on low-power mobile */
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
   }
+}
+
+@media (max-width: 375px) {
+  /* Smallest screens */
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.35rem; }
+  .glass, .bento { padding: 18px 14px !important; }
 }
 
 /* ======== SCROLLBAR ======== */

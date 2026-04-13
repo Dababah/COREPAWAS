@@ -157,10 +157,90 @@
 }
 
 @media (max-width: 768px) {
-  .container { padding-top: 120px; }
-  .promiseGrid { grid-template-columns: 1fr; }
-  .detailBox { padding: 24px; }
-  .hero h1 { font-size: 2.2rem; }
-  .principleSection h2 { font-size: 2rem; }
-  .principleSection { padding: 60px 20px; }
+  .container { padding: 96px 20px 48px; }
+
+  /* Hero */
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .imageWrapper {
+    max-width: 260px;
+    margin: 0 auto;
+    order: -1;
+    aspect-ratio: 3/4;
+    border-radius: 24px;
+  }
+  .heroContent h1 {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+  }
+  .story {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  /* Principle section */
+  .principleSection {
+    padding: 36px 20px;
+    margin-bottom: 56px;
+    border-radius: 20px;
+  }
+  .principleSection h2 {
+    font-size: 1.6rem;
+    line-height: 1.15;
+  }
+  .principleText {
+    font-size: 0.95rem;
+  }
+
+  /* Story grid */
+  .storyGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 56px;
+  }
+  .storyCard h3 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+
+  /* Services detail */
+  .servicesDetail { margin-bottom: 56px; }
+  .detailGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 28px;
+  }
+  .detailBox {
+    padding: 22px 18px;
+    border-radius: 14px;
+  }
+  .detailBox h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  .pointList { gap: 18px; }
+  .pointItem h4 { font-size: 1rem; }
+
+  /* Lifestyle */
+  .lifestyleSection {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-bottom: 56px;
+  }
+
+  /* Promise */
+  .promiseSection { margin-bottom: 56px; }
+  .promiseGrid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .promiseCard { padding: 22px 18px; }
 }
