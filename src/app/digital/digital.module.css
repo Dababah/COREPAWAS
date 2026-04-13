@@ -276,10 +276,10 @@
     font-size: 0.9rem;
   }
 
-  /* Grids - all single column */
+  /* Grids - using 2 columns for desktop-like feel */
   .importanceGrid, .servicesGrid, .offerGrid {
-    grid-template-columns: 1fr;
-    gap: 14px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
   .processGrid {
     grid-template-columns: 1fr 1fr;
@@ -292,13 +292,17 @@
     border-radius: 14px;
   }
   .importanceCard h3 {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     text-align: left;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
   .serviceCard h3 {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     text-align: left;
+  }
+  .importanceCard p, .serviceCard p {
+    font-size: 0.75rem;
+    line-height: 1.5;
   }
 
   /* Section spacing */

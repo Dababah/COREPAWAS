@@ -263,15 +263,18 @@
     max-width: 100%;
   }
   .ctaGroup {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     gap: 12px;
     width: 100%;
   }
   .btnGreen, .btnGold {
-    width: 100%;
+    width: auto;
+    flex: 1;
+    min-width: 140px;
     justify-content: center;
-    padding: 15px 20px;
-    font-size: 0.95rem;
+    padding: 14px 10px;
+    font-size: 0.85rem;
     border-radius: 10px;
   }
 
@@ -287,27 +290,27 @@
     line-height: 1.15;
   }
 
-  /* Problem & Bonus grid */
+  /* Problem & Bonus grid - 2 columns for desktop feel */
   .problemSection {
-    padding: 48px 20px;
+    padding: 40px 16px;
   }
   .problemGrid, .bonusGrid {
-    grid-template-columns: 1fr;
-    gap: 14px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
   .problemCard, .bonusCard {
-    padding: 24px 20px;
-    border-radius: 14px;
+    padding: 20px 16px;
+    border-radius: 12px;
   }
   .problemCard h3 {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
+    font-size: 1rem;
+    margin-bottom: 8px;
     text-align: left;
   }
   .problemCard p, .bonusCard p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-align: left;
-    line-height: 1.65;
+    line-height: 1.5;
   }
 
   /* Solution section */
@@ -322,8 +325,8 @@
     text-align: left;
   }
   .featureList {
-    grid-template-columns: 1fr;
-    gap: 12px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
     margin-top: 20px;
   }
   .featureItem {

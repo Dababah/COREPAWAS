@@ -282,26 +282,26 @@
     line-height: 1.15;
   }
 
-  /* Grids */
+  /* Grids - multi-column for desktop feel */
   .problemGrid {
-    grid-template-columns: 1fr;
-    gap: 14px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
   .bentoGrid {
-    grid-template-columns: 1fr;
-    gap: 14px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
   .bentoMain {
-    grid-column: span 1;
+    grid-column: span 2;
   }
   .flowGrid {
     grid-template-columns: 1fr 1fr;
     gap: 12px;
   }
   .valueGrid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-    margin-bottom: 48px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 40px;
   }
 
   /* Cards */
@@ -310,9 +310,13 @@
     border-radius: 14px;
   }
   .problemCard h3 {
-    font-size: 1.05rem;
+    font-size: 0.9rem;
     text-align: left;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+  }
+  .problemCard p {
+    font-size: 0.75rem;
+    line-height: 1.5;
   }
   .bentoCard {
     padding: 22px 18px;

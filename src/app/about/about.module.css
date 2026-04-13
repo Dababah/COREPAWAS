@@ -213,13 +213,13 @@
   /* Services detail */
   .servicesDetail { margin-bottom: 56px; }
   .detailGrid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    margin-top: 28px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 24px;
   }
   .detailBox {
-    padding: 22px 18px;
-    border-radius: 14px;
+    padding: 20px 16px;
+    border-radius: 12px;
   }
   .detailBox h3 {
     font-size: 1.3rem;
@@ -238,9 +238,9 @@
   /* Promise */
   .promiseSection { margin-bottom: 56px; }
   .promiseGrid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-    margin-top: 28px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 24px;
   }
-  .promiseCard { padding: 22px 18px; }
+  .promiseCard { padding: 18px 14px; }
 }
