@@ -1,40 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&family=Syncopate:wght@400;700&display=swap');
 
 :root {
-  /* ===== DARK NEON LIME THEME ===== */
-  --background: #080808;
+  /* ===== LUXURY PORTFOLIO GREEN THEME ===== */
+  --background: #020402;
   --foreground: #ffffff;
-  --surface: #111111;
-  --surface-2: #181818;
-  --surface-border: rgba(255, 255, 255, 0.07);
-  --glass-bg: rgba(15, 15, 15, 0.85);
-  --text-muted: rgba(255, 255, 255, 0.55);
-  --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  --surface: #0a0c0a;
+  --surface-2: #121612;
+  --surface-border: rgba(255, 255, 255, 0.05);
+  --glass-bg: rgba(5, 7, 5, 0.9);
+  --text-muted: rgba(255, 255, 255, 0.5);
+  --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
 
-  /* PRIMARY ACCENT: Neon Lime/Chartreuse */
-  --accent-primary: #c8f027;       /* Bright lime-yellow (like the "YOUR" text) */
-  --accent-primary-dim: rgba(200, 240, 39, 0.12);
-  --accent-primary-border: rgba(200, 240, 39, 0.3);
-  --accent-glow: rgba(200, 240, 39, 0.25);
+  /* PRIMARY ACCENT: Misty Neon Green */
+  --accent-primary: #00ff66;       /* Pure Neon Green */
+  --accent-primary-dim: rgba(0, 255, 102, 0.1);
+  --accent-primary-border: rgba(0, 255, 102, 0.2);
+  --accent-glow: rgba(0, 255, 102, 0.15);
   
-  /* Supporting Colors */
   --accent-red: #ff3b3b;
   --accent-orange: #f59e0b;
-  --accent-green: #c8f027;   /* Remap green to lime for consistency */
-  --accent-gold: #c8f027;
+  --accent-green: #00ff66;
+  --accent-gold: #00ff66;
 
   --font-heading: 'Plus Jakarta Sans', sans-serif;
   --font-body: 'Outfit', sans-serif;
+  --font-mega: 'Syncopate', sans-serif;
 }
 
-/* Override ThemeProvider attempts — always stay dark */
-[data-theme='light'], [data-theme='dark'] {
-  --background: #080808;
-  --foreground: #ffffff;
-  --surface: #111111;
-  --text-muted: rgba(255, 255, 255, 0.55);
-}
-
+/* Force Premium Identity */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -51,78 +44,71 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ======== MASTER BACKGROUND SYSTEM ======== */
-
-/* Deep dark base with very subtle texture */
+/* ======== MISTY PORTFOLIO BACKGROUND ======== */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   background:
-    /* Neon lime glow - top left */
-    radial-gradient(ellipse at 0% 0%, rgba(200, 240, 39, 0.06) 0%, transparent 50%),
-    /* Accent glow - bottom right */
-    radial-gradient(ellipse at 100% 100%, rgba(200, 240, 39, 0.04) 0%, transparent 40%),
-    /* Center dark */
-    radial-gradient(ellipse at 50% 50%, #0e0e0e 0%, #070707 100%);
+    /* Green Glow behind portrait */
+    radial-gradient(circle at 50% 40%, rgba(0, 255, 102, 0.08) 0%, transparent 40%),
+    /* Ambient Bottom Green */
+    radial-gradient(circle at 0% 100%, rgba(0, 255, 102, 0.05) 0%, transparent 50%),
+    /* Dark Grain Background */
+    #020402;
   z-index: -5;
   pointer-events: none;
 }
 
-/* Subtle dot-grid texture */
+/* Grained Texture overlay */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 32px 32px;
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.1;
   z-index: -4;
   pointer-events: none;
-  opacity: 0.6;
 }
 
-/* ======== TYPOGRAPHY ======== */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -0.04em;
   color: #ffffff;
-  line-height: 1.05;
 }
 
 p {
   color: var(--text-muted);
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
-a { color: inherit; text-decoration: none; }
+/* Mega Background Text Utility */
+.megaText {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mega);
+  font-size: 10vw;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(0, 255, 102, 0.15);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: -1;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
 
-/* ======== NEON GRADIENT TEXT ======== */
 .gradientText {
-  background: linear-gradient(135deg, #c8f027 0%, #e8ff80 100%);
+  background: linear-gradient(135deg, #00ff66 0%, #ffffff 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* ======== BADGE (Neon Lime Style) ======== */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--accent-primary-dim);
-  color: var(--accent-primary);
-  padding: 6px 18px;
-  border-radius: 4px;   /* Squared off like gym theme */
-  font-size: 0.75rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border: 1px solid var(--accent-primary-border);
-  margin-bottom: 24px;
-}
-
-/* ======== CARDS ======== */
+/* Professional Portofolio Cards */
 .glass {
   background: var(--glass-bg);
   backdrop-filter: blur(20px);
@@ -137,156 +123,17 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid var(--surface-border);
   border-radius: 16px;
   box-shadow: var(--card-shadow);
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
 }
 
 .bento:hover {
   transform: translateY(-6px);
-  border-color: var(--accent-primary-border);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 30px var(--accent-glow);
+  border-color: rgba(0, 255, 102, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 255, 102, 0.05);
 }
 
-/* ======== NEON HIGHLIGHT EFFECT ======== */
-.neon-highlight {
-  color: var(--accent-primary);
-  text-shadow: 0 0 20px rgba(200, 240, 39, 0.5);
-}
-
-/* ======== ANIMATIONS ======== */
-.fade-in {
-  animation: fadeIn 0.8s ease-out forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* ======== MOBILE ======== */
 @media (max-width: 768px) {
-  /* Base typography — let page CSS take finer control */
-  h1 { font-size: clamp(1.75rem, 6.5vw, 2.2rem); line-height: 1.1; }
-  h2 { font-size: clamp(1.4rem, 5vw, 1.8rem); line-height: 1.15; }
-  h3 { font-size: clamp(1rem, 4vw, 1.25rem); }
-  p  { font-size: 0.925rem; line-height: 1.7; }
-
-  /* Text alignment: headings center, body left */
-  h1, h2 { text-align: center; }
-  p { text-align: left; }
-
-  /* Cards breathe comfortably */
-  .glass { padding: 22px 18px !important; border-radius: 16px; }
-  .bento { padding: 22px 18px !important; border-radius: 16px; }
-
-  /* Disable animations on low-power mobile */
-  @media (prefers-reduced-motion: reduce) {
-    * { animation: none !important; transition: none !important; }
-  }
-}
-
-@media (max-width: 375px) {
-  /* Smallest screens */
-  h1 { font-size: 1.6rem; }
-  h2 { font-size: 1.35rem; }
-  .glass, .bento { padding: 18px 14px !important; }
-}
-
-/* ======== SCROLLBAR ======== */
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: #080808; }
-::-webkit-scrollbar-thumb { background: #222; border-radius: 10px; }
-::-webkit-scrollbar-thumb:hover { background: var(--accent-primary); }
-
-/* ========================================
-   GLOBAL GRID CARD EFFECTS SYSTEM
-   ======================================== */
-
-/* All grid cards */
-.bento, .glass,
-[class*="Card"], [class*="card"],
-[class*="importanceCard"], [class*="serviceCard"],
-[class*="problemCard"], [class*="bonusCard"],
-[class*="processCard"], [class*="offerCard"],
-[class*="bentoCard"], [class*="flowCard"],
-[class*="valueCard"], [class*="promiseCard"],
-[class*="postCard"], [class*="detailBox"] {
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-              border-color 0.3s ease,
-              box-shadow 0.35s ease !important;
-}
-
-/* Shimmer sweep on hover */
-.bento::before, .glass::before,
-[class*="Card"]::before, [class*="card"]::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    transparent 0%,
-    rgba(200, 240, 39, 0.05) 50%,
-    transparent 100%
-  );
-  transform: translateX(-100%);
-  transition: transform 0.7s ease;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.bento:hover::before, .glass:hover::before,
-[class*="Card"]:hover::before, [class*="card"]:hover::before {
-  transform: translateX(200%);
-}
-
-/* Neon border glow + lift on hover */
-.bento:hover,
-[class*="Card"]:hover, [class*="card"]:hover {
-  border-color: rgba(200, 240, 39, 0.35) !important;
-  box-shadow:
-    0 0 0 1px rgba(200, 240, 39, 0.1),
-    0 20px 60px rgba(0, 0, 0, 0.7),
-    0 0 40px rgba(200, 240, 39, 0.07) !important;
-  transform: translateY(-6px) !important;
-}
-
-/* Top neon line on hover */
-.bento::after,
-[class*="Card"]::after, [class*="card"]::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #c8f027, transparent);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.bento:hover::after,
-[class*="Card"]:hover::after, [class*="card"]:hover::after {
-  opacity: 1;
-}
-
-/* CTA pulse ring on hover */
-@keyframes ringPulse {
-  0%   { box-shadow: 0 0 0 0 rgba(200, 240, 39, 0.4); }
-  70%  { box-shadow: 0 0 0 14px rgba(200, 240, 39, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(200, 240, 39, 0); }
-}
-
-[class*="btnGold"]:hover, [class*="btnGreen"]:hover,
-[class*="goldBtn"]:hover, [class*="ctaBtn"]:hover {
-  animation: ringPulse 0.6s ease-out;
-}
-
-/* Number stat highlight */
-[class*="processCard"]:hover [class*="processNumber"] {
-  color: #c8f027;
-  transform: scale(1.1);
-  transition: all 0.3s ease;
+  h1 { font-size: 2.2rem !important; }
+  h2 { font-size: 1.8rem !important; }
+  .megaText { font-size: 15vw; top: 10%; }
 }
