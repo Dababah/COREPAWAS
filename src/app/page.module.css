@@ -1,6 +1,6 @@
 .main {
   min-height: 100vh;
-  background: var(--background);
+  background: transparent;
   color: var(--foreground);
   position: relative;
   overflow-x: hidden;
