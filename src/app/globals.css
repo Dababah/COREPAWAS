@@ -99,23 +99,37 @@ a {
   animation: pulse-glow 4s infinite alternate;
 }
 
-/* Responsive Optimizations */
+/* Responsive Optimizations - Professional & Neat */
 @media (max-width: 768px) {
   :root {
-    --font-heading-size: 2.2rem;
+    --font-heading-size: 1.8rem;
   }
   
-  h1 { font-size: 2.5rem !important; }
-  h2 { font-size: 2rem !important; }
-  h3 { font-size: 1.5rem !important; }
-  p { font-size: 1rem !important; }
+  h1, h2 { 
+    text-align: center; 
+    letter-spacing: -0.5px;
+  }
   
-  .glass {
+  p { 
+    text-align: center; 
+    color: rgba(255, 255, 255, 0.6) !important;
+  }
+  
+  .glass, .bento {
     border-radius: 16px;
+    padding: 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.08); /* Sharper borders */
+    background: rgba(10, 10, 15, 0.4) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  /* List items should stay left aligned even if parent is center */
+  ul, .techList, .featureList, .pointList {
+    text-align: left;
   }
   
-  .bento {
-    border-radius: 20px;
+  ul li, .techList div, .featureList div, .pointList div {
+    text-align: left;
   }
 }
 

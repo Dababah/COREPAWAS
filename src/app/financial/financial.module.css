@@ -245,13 +245,13 @@
 }
 
 @media (max-width: 768px) {
-  .problemGrid, .bentoGrid, .flowGrid, .valueGrid { grid-template-columns: 1fr; gap: 20px; }
-  .title { font-size: 2.2rem; text-align: center; }
-  .subtitle { font-size: 1rem; text-align: center; }
-  .goldBtn { width: 100%; text-align: center; padding: 18px 24px; }
-  .sectionHeader h2 { font-size: 2rem; }
-  .trustGrid { gap: 40px; }
-  .trustSection { padding: 40px 20px; }
-  .finalCta h2 { font-size: 2rem; }
-  .bentoMain { grid-column: span 1; }
+  .container { padding: 80px 16px 40px; }
+  .problemGrid, .bentoGrid, .flowGrid, .valueGrid { grid-template-columns: 1fr; gap: 12px; }
+  .title { font-size: 1.8rem; }
+  .subtitle { font-size: 0.9rem; margin-bottom: 24px; }
+  .sectionHeader { margin-bottom: 32px; }
+  .trustSection { padding: 24px 16px; margin-bottom: 60px; }
+  .trustGrid { gap: 24px; }
+  .problemSection, .strategySection, .flowSection { margin-bottom: 60px; }
+  .finalCta { padding: 60px 20px; }
 }
